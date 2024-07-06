@@ -7,9 +7,6 @@
       "email": "info@gerp.it"
     }
   ],
-  "config": {
-    "bin-dir": "bin"
-  },
   "require": {
     "php": ">=8.1",
     "ext-curl": "*",
@@ -24,6 +21,5 @@
     "ext-calendar": "*",
     "ext-zip": "*",
     "ext-ctype": "*"
-  },
-  "minimum-stability": "beta"
+  }
 }
