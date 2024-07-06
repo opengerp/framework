@@ -4,7 +4,7 @@
   "authors": [
     {
       "name": "Carlo Centrone",
-      "email": "carlo.centrone@gerp.it"
+      "email": "info@gerp.it"
     }
   ],
   "config": {
@@ -21,7 +21,6 @@
     "ext-gd": "*",
     "ext-iconv": "*",
     "ext-imap": "*",
-    "ext-imagick": "*",
     "ext-calendar": "*",
     "ext-zip": "*",
     "ext-ctype": "*"
