@@ -1,0 +1,59 @@
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+composer.lock
+
+
+.idea/
+.fleet/
+*.code-workspace
+.svn/
+.phpunit.result.cache
+ext
+vendor/*
+tmp
+/config.php
+/test/config.php
+custom/*
+templates/templates_c
+indip/changelog.json
+node_modules/*
+bin/php-parse*
+bin/phpunit*
+bin/var-dump-server*
+bin/yaml-lint*
+public/dev
+public/assets/select2
+public/assets/ckeditor
+
+# Thumbnails
+._*
+
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.exe
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
