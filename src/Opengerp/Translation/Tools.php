@@ -20,9 +20,15 @@ class Tools
         $results2 = array();
         preg_match_all("#{\"(.*?)\"\|trans[\|}]#", $string, $results2, PREG_OFFSET_CAPTURE);
 
-        $results = array_merge($results, $results2);
+        $final = [];
+        foreach($results as $item) {
+            $final[] = $item[1];
+        }
+        foreach($results2 as $item) {
+            $final[] = $item[1];
+        }
 
-        return $results;
+        return $final;
     }
 
     /**
