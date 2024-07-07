@@ -86,7 +86,7 @@ class Tools
         }
 
         return $str;
-        
+
     }
 
     public static function trimAll($lemma)
