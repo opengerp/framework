@@ -48,18 +48,24 @@ class Tools
 
         $results = [];
         foreach ($vett_functions as $function) {
-            $pattern = $function[0].'((.*?))(?=\))';
-            $index = $function[1];
+            $index = $function[1]+1;
 
-            preg_match_all("/$pattern/", $string, $addField);
-            foreach ($addField[1] as $key => $item) {
-                $arr_lems = explode(',', $item);
-                if (isset($arr_lems[$index])) {
-                    if (strpos($arr_lems[$index], 'trans(') == false) {
-                        $results[] = self::trimAll($arr_lems[$index]);
-                    }
+            $pattern = '/'.$function[0].'\s*\(\s*';
+            for ($i = 1; $i <= $index; $i++) {
+                $pattern .= '([\'"])(.*?)\1\s*,\s*';
+            }
+            $pattern = rtrim($pattern, ',\s*') . '\)/';
+
+
+            if (preg_match_all($pattern, $string, $matches)) {
+                // Recupera gli n-esimi argomenti trovati
+                $arguments = $matches[$index * 2];
+                foreach($arguments as $argument) {
+                    $results[] = trim($argument);
                 }
             }
+
+
         }
 
         return $results;
