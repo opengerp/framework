@@ -61,9 +61,8 @@ class Tools
 
         $str = '';
 
-        foreach($vett as $key) {
+        foreach($vett as $k) {
 
-            $k = $key[0];
 
             if (!in_array($k, $vett_duplicates)) {
 
