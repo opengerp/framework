@@ -55,6 +55,40 @@ class Tools
 
     }
 
+    public static function getYmlFromArray($vett)
+    {
+        static $vett_duplicates = [];
+
+        $str = '';
+
+        foreach($vett as $key) {
+
+            $k = $key[0];
+
+            if (!in_array($k, $vett_duplicates)) {
+
+                array_push($vett_duplicates, $k);
+
+                $k = addcslashes($k, '"');
+
+                if (strlen($k) > 0) {
+                    $str .="\n";
+                    if (isset($yaml[$k])) {
+                        $str .= '"' . $k . '" : ' . addcslashes($yaml[$k], '"');
+                    } else {
+                        $str .= '"' . $k . '" : ';
+                    }
+                }
+
+
+            }
+
+        }
+
+        return $str;
+        
+    }
+
     public static function trimAll($lemma)
     {
         $lemma = rtrim(trim($lemma),')');
