@@ -22,10 +22,16 @@ class Tools
 
         $final = [];
         foreach($results as $item) {
-            $final[] = $item[1];
+            if (isset($item[0][0]) && $item[0][1]==2) {
+                $final[] = $item[0][0];
+            }
         }
         foreach($results2 as $item) {
-            $final[] = $item[1];
+            if (isset($item[0][0]) && $item[0][1]==2) {
+                $final[] = $item[0][0];
+                
+            }
+
         }
 
         return $final;

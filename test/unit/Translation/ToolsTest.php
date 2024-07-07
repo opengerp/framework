@@ -26,4 +26,14 @@ final class getYmlTest extends TestCase
 
         $this->assertEquals('some', $results[0]);
     }
+    public function testFetchTermsFromTemplate()
+    {
+        $str = '{"some"|trans}] ';
+
+        $results = \Opengerp\Translation\Tools::fetchTermsFromTemplateCode($str);
+
+        $this->assertEquals('some', $results[0]);
+    }
+
+
 }
