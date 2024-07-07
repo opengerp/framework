@@ -29,7 +29,7 @@ class Tools
         foreach($results2 as $item) {
             if (isset($item[0][0]) && $item[0][1]==2) {
                 $final[] = $item[0][0];
-                
+
             }
 
         }
