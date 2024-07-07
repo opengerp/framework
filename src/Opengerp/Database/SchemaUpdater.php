@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerp\System;
+namespace Opengerp\Database;
 
 use PDO;
 
