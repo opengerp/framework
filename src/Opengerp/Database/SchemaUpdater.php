@@ -257,7 +257,13 @@ class SchemaUpdater
 
             if (isset($children['default'])) {
 
-                $str_sql .= " DEFAULT '$children[default]' ";
+                if ($children['default'] == "CURRENT_TIMESTAMP") {
+                    $str_sql .= " DEFAULT $children[default] ";
+                } else {
+
+                    $str_sql .= " DEFAULT '$children[default]' ";
+                }
+
             }
 
 
