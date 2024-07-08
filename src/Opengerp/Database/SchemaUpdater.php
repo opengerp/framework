@@ -391,7 +391,12 @@ class SchemaUpdater
             if ($children['null'] == 'YES') {
                 $des_default = " DEFAULT NULL ";
             } elseif(isset($children['default'])) {
-                $des_default = " DEFAULT '$children[default]' ";
+                if ($children['default'] == "CURRENT_TIMESTAMP") {
+                    $des_default = " DEFAULT $children[default] ";
+                } else {
+
+                    $des_default = " DEFAULT '$children[default]' ";
+                }
             }
         }
 
