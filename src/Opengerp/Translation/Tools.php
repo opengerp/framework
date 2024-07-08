@@ -12,29 +12,20 @@ class Tools
      */
     public static function fetchTermsFromTemplateCode($file_content)
     {
-        $string = $file_content;
 
-        $results = array();
-        preg_match_all("#{\'(.*?)\'\|trans[\|}]#", $string, $results, PREG_OFFSET_CAPTURE);
+        $arguments = [];
 
-        $results2 = array();
-        preg_match_all("#{\"(.*?)\"\|trans[\|}]#", $string, $results2, PREG_OFFSET_CAPTURE);
+        // Usa una espressione regolare per trovare le occorrenze del filtro trans
+        $pattern = "/\{\s*['\"](.*?)['\"]\s*\|\s*trans\s*\}/";
 
-        $final = [];
-        foreach($results as $item) {
-            if (isset($item[0][0]) && $item[0][1]==2) {
-                $final[] = $item[0][0];
-            }
-        }
-        foreach($results2 as $item) {
-            if (isset($item[0][0]) && $item[0][1]==2) {
-                $final[] = $item[0][0];
-
-            }
-
+        // Esegui il pattern matching
+        if (preg_match_all($pattern, $file_content, $matches)) {
+            // Recupera gli argomenti trovati
+            $arguments = $matches[1];
         }
 
-        return $final;
+        return $arguments;
+
     }
 
     /**

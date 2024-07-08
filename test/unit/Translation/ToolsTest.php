@@ -28,7 +28,7 @@ final class getYmlTest extends TestCase
     }
     public function testFetchTermsFromTemplate()
     {
-        $str = '{"some"|trans}] ';
+        $str = '"{"some"|trans}" ';
 
         $results = \Opengerp\Translation\Tools::fetchTermsFromTemplateCode($str);
 
