@@ -16,7 +16,7 @@ class Tools
         $arguments = [];
 
         // Usa una espressione regolare per trovare le occorrenze del filtro trans
-        $pattern = "/\{\s*['\"](.*?)['\"]\s*\|\s*trans\s*\}/";
+        $pattern = "/\{\s*['\"](.*?)['\"]\s*\|\s*trans(?:\s*\|\s*sprintf\s*:\s*\$[a-zA-Z_][a-zA-Z0-9_]*)?\s*\}/";
 
         // Esegui il pattern matching
         if (preg_match_all($pattern, $file_content, $matches)) {
