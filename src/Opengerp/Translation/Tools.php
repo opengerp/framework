@@ -64,7 +64,7 @@ class Tools
 
     }
 
-    public static function getYmlFromArray($vett)
+    public static function getYmlFromArray($vett, $yaml)
     {
         static $vett_duplicates = [];
 
